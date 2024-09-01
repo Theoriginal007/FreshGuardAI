@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './App';
-import './index.css';  // Import global styles
-import { BrowserRouter as Router } from 'react-router-dom';  // For routing
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';  // For service worker registration
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme from './theme';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // Create root element
 const rootElement = document.getElementById('root');
@@ -11,12 +12,12 @@ const root = ReactDOM.createRoot(rootElement);
 
 // Render the application
 root.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>
-);
+  <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <App />
+      </Router>
+  </ThemeProvider>
+ 
 
-// Register the service worker for offline capabilities and faster load times
-serviceWorkerRegistration.register();
+);
