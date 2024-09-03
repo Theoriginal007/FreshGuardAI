@@ -3,3 +3,5 @@ frontend/.env
 frontend/.env.local
 frontend/.env.test
 frontend/node_modules/
+frontend/firebaseConfig.js
+frontend/config.js
